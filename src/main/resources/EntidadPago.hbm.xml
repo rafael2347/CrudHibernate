@@ -1,0 +1,21 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="org.example.EntidadPago" table="pago" schema="mi_base_de_datos">
+        <id name="idPago">
+            <column name="id_pago" sql-type="int"/>
+        </id>
+        <property name="idPedido">
+            <column name="id_pedido" sql-type="int" not-null="true"/>
+        </property>
+        <property name="monto">
+            <column name="monto" sql-type="decimal(10,2)" precision="10" scale="2" not-null="true"/>
+        </property>
+        <property name="fecha">
+            <column name="fecha" sql-type="date" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>
