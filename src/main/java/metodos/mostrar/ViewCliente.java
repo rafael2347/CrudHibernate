@@ -25,7 +25,7 @@ public class ViewCliente {
                     List<EntidadCliente> listaClientes = miQuery.list();
                     for (EntidadCliente cliente : listaClientes) {
                         System.out.printf("Nombre: %s, Apellido: %s, NIF: %s\n",
-                                cliente.getNombre(), cliente.getApellido());
+                                cliente.getNombre(), cliente.getApellido(), cliente.getNif());
                     }
                 }
             }

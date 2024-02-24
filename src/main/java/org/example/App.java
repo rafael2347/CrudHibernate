@@ -1,5 +1,6 @@
 package org.example;
 
+import metodos.mostrar.AddCliente;
 import metodos.mostrar.ViewPago;
 import metodos.mostrar.ViewPedido;
 import org.hibernate.Session;
@@ -32,13 +33,33 @@ public class App {
                 } else if ("pago".equals(dato)) {
                     ViewPago pago = new ViewPago();
                     pago.MostrarPago();
-                    // Lógica para manejar pagos
                 } else if ("pedido".equals(dato)) {
                     ViewPedido pedido = new ViewPedido();
                     pedido.MostrarPedido();
-                    // Lógica para manejar pedidos
                 }
                 break;
+            case "2":
+                System.out.println("En qué base de datos quieres añadir: cliente, pago, pedido");
+                String add = sc.nextLine();
+                if ("cliente".equals(add)) {
+                    System.out.println("Ingrese el nombre del cliente:");
+                    String nombre = sc.nextLine();
+                    System.out.println("Ingrese el apellido del cliente:");
+                    String apellido = sc.nextLine();
+                    System.out.println("Ingrese el NIF del cliente:");
+                    String nif = sc.nextLine();
+                    AddCliente cliente = new AddCliente();
+                    cliente.InsertarCliente(nombre, apellido, nif);
+                } else if ("pago".equals(add)) {
+                    ViewPago pago = new ViewPago();
+                    pago.MostrarPago();
+                } else if ("pedido".equals(add)) {
+                    ViewPedido pedido = new ViewPedido();
+                    pedido.MostrarPedido();
+                }
+                break;
+
+
             default:
                 System.out.println("No puedes introducir un número que no esté en el menú y tampoco puedes poner una palabra");
         }

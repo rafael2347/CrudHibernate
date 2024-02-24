@@ -6,7 +6,7 @@
 
     <class name="org.example.EntidadCliente" table="cliente" schema="mi_base_de_datos">
         <id name="nif">
-            <column name="nif" sql-type="char(9)" length="9"/>
+            <column name="nif" sql-type="char(9)" length="20"/>
         </id>
         <property name="nombre">
             <column name="nombre" sql-type="varchar(100)" length="100" not-null="true"/>
