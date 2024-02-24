@@ -28,14 +28,14 @@ public class App {
                 String dato = sc.nextLine();
                 if ("cliente".equals(dato)) {
                     ViewCliente cliente = new ViewCliente();
-                    cliente.mostrarClientes();
+                    cliente.MostrarCliente();
                 } else if ("pago".equals(dato)) {
                     ViewPago pago = new ViewPago();
-                    pago.mostrarPago();
+                    pago.MostrarPago();
                     // Lógica para manejar pagos
                 } else if ("pedido".equals(dato)) {
                     ViewPedido pedido = new ViewPedido();
-                    pedido.mostrarPedido();
+                    pedido.MostrarPedido();
                     // Lógica para manejar pedidos
                 }
                 break;

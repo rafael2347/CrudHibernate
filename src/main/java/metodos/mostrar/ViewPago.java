@@ -11,7 +11,7 @@ import java.util.List;
 import java.util.logging.Level;
 
 public class ViewPago {
-    public void mostrarPago() {
+    public void MostrarPago() {
         try {
             // Para eliminar los mensajes de Hibernate/ hacer cuando esté funcionando bien
             @SuppressWarnings("unused")

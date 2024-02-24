@@ -11,7 +11,7 @@ import java.util.logging.Level;
 
 public class ViewPedido {
 
-    public void mostrarPedido() {
+    public void MostrarPedido() {
         try {
             // Para eliminar los mensajes de Hibernate/ hacer cuando esté funcionando bien
             @SuppressWarnings("unused")
