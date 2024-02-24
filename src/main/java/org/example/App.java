@@ -1,20 +1,28 @@
 package org.example;
 
-import metodos.mostrar.AddCliente;
+import org.hibernate.SessionFactory;
+import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+import org.hibernate.cfg.Configuration;
+
+import metodos.anadir.AddCliente;
+import metodos.anadir.AddPago;
+import metodos.anadir.AddPedido;
+import metodos.borrar.DellCliente;
+import metodos.mostrar.ViewCliente;
 import metodos.mostrar.ViewPago;
 import metodos.mostrar.ViewPedido;
-import org.hibernate.Session;
-import org.hibernate.SessionFactory;
-import org.hibernate.query.Query;
-import org.hibernate.cfg.Configuration;
-import metodos.mostrar.ViewCliente;
 
-import java.util.List;
+import java.math.BigDecimal;
 import java.util.Scanner;
-import java.util.logging.Level;
 
 public class App {
+
+
     public static void main(String[] args) {
+        // Inicializar sessionFactory
+        Configuration configuration = new Configuration().configure();
+        SessionFactory sessionFactory = configuration.buildSessionFactory();
+
         Scanner sc = new Scanner(System.in);
         System.out.println("Bienvenido al Crud en Hibernate, ¿qué desea hacer?");
         System.out.println("0.Salir");
@@ -23,7 +31,7 @@ public class App {
         System.out.println("3.Editar");
         System.out.println("4.Eliminar");
         String accion = sc.nextLine();
-        switch (accion){
+        switch (accion) {
             case "1":
                 System.out.println("Qué base de datos quieres ver: cliente, pago, pedido");
                 String dato = sc.nextLine();
@@ -51,15 +59,47 @@ public class App {
                     AddCliente cliente = new AddCliente();
                     cliente.InsertarCliente(nombre, apellido, nif);
                 } else if ("pago".equals(add)) {
-                    ViewPago pago = new ViewPago();
-                    pago.MostrarPago();
+                    System.out.println("Ingrese el ID del pedido:");
+                    int idPedido = Integer.parseInt(sc.nextLine());
+                    System.out.println("Ingrese el monto:");
+                    BigDecimal monto = new BigDecimal(sc.nextLine());
+                    java.util.Date utilDate = new java.util.Date();
+                    java.sql.Date fecha = new java.sql.Date(utilDate.getTime());
+                    AddPago pago = new AddPago();
+                    pago.InsertarPago(idPedido, monto, fecha);
                 } else if ("pedido".equals(add)) {
-                    ViewPedido pedido = new ViewPedido();
-                    pedido.MostrarPedido();
+                    System.out.println("Ingrese el NIF del cliente:");
+                    String nif = sc.nextLine();
+                    System.out.println("Ingrese el producto:");
+                    String producto = sc.nextLine();
+                    System.out.println("Ingrese la cantidad:");
+                    int cantidad = Integer.parseInt(sc.nextLine());
+                    AddPedido pedido = new AddPedido();
+                    pedido.InsertarPedido(nif, producto, cantidad);
                 }
                 break;
+            case "4":
+                System.out.println("Ingrese la base de datos de la que desea eliminar un registro: cliente, pago, pedido");
+                String dell = sc.nextLine();
+                if ("cliente".equals(dell)) {
+                    // Utilizar Scanner para capturar la entrada del usuario
+                    Scanner scanner = new Scanner(System.in);
+                    System.out.println("Ingrese el NIF del cliente que desea eliminar:");
+                    String nifClienteAEliminar = scanner.nextLine(); // Leer el NIF ingresado por el usuario
 
+                    // Llamar al método para eliminar el cliente
+                    DellCliente.eliminarCliente(sessionFactory, nifClienteAEliminar);
 
+                    // Cerrar el scanner
+                    scanner.close();
+                } else if ("pago".equals(dell)) {
+                    System.out.println("Ingrese el ID del pedido:");
+                    int idPedido = Integer.parseInt(sc.nextLine());
+                    // Agrega aquí la lógica para eliminar un pago
+                } else if ("pedido".equals(dell)) {
+                    // Agrega aquí la lógica para eliminar un pedido
+                }
+                break;
             default:
                 System.out.println("No puedes introducir un número que no esté en el menú y tampoco puedes poner una palabra");
         }

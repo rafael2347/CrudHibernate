@@ -1,4 +1,4 @@
-package metodos.mostrar;
+package metodos.anadir;
 
 import org.example.EntidadCliente;
 import org.hibernate.Session;
