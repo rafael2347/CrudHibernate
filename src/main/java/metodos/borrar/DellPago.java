@@ -6,10 +6,16 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
-import java.util.Scanner;
-
+/**
+ * Clase para eliminar un pago de la base de datos.
+ */
 public class DellPago {
 
+    /**
+     * Método para eliminar un pago por su ID.
+     * @param sessionFactory Factoría de sesiones Hibernate.
+     * @param idPago ID del pago a eliminar.
+     */
     public static void EliminarPago(SessionFactory sessionFactory, int idPago) {
         Transaction transaction = null;
         Session session = null;

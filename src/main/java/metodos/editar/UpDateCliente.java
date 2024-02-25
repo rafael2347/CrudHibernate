@@ -9,7 +9,16 @@ import org.hibernate.query.Query;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * Clase para actualizar la información de un cliente en la base de datos.
+ */
 public class UpDateCliente {
+
+    /**
+     * Método para modificar un cliente.
+     * @param sessionFactory Factoría de sesiones Hibernate.
+     * @param nifCliente NIF del cliente a modificar.
+     */
     public static void ModificarCliente(SessionFactory sessionFactory, String nifCliente) {
         Transaction transaction = null;
         Session session = null;

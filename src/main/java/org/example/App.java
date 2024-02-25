@@ -18,6 +18,10 @@ import metodos.mostrar.ViewPedido;
 import java.math.BigDecimal;
 import java.util.Scanner;
 
+/**
+ * Una aplicación de consola que implementa un CRUD (Crear, Leer, Actualizar, Eliminar)
+ * utilizando Hibernate para interactuar con una base de datos relacional.
+ */
 public class App {
     public static void main(String[] args) {
         // Inicializar sessionFactory
@@ -113,8 +117,6 @@ public class App {
                         System.out.println("Base de datos no válida.");
                     }
                     break;
-
-
 
                 case "4":
                     System.out.println("Ingrese la base de datos de la que desea eliminar un registro: cliente, pago, pedido");

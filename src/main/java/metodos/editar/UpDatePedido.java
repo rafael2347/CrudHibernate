@@ -9,8 +9,16 @@ import org.example.EntidadPedido;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * Clase para actualizar la información de un pedido en la base de datos.
+ */
 public class UpDatePedido {
 
+    /**
+     * Método para modificar un pedido.
+     * @param sessionFactory Factoría de sesiones Hibernate.
+     * @param producto Producto del pedido a modificar.
+     */
     public static void ModificarPedido(SessionFactory sessionFactory, String producto) {
         Transaction transaction = null;
         Session session = null;

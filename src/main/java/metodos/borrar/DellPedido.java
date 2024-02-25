@@ -7,8 +7,16 @@ import org.hibernate.Transaction;
 
 import java.util.List;
 
+/**
+ * Clase para eliminar pedidos de la base de datos.
+ */
 public class DellPedido {
 
+    /**
+     * Método para eliminar pedidos por producto.
+     * @param sessionFactory Factoría de sesiones Hibernate.
+     * @param producto Producto asociado a los pedidos que se desean eliminar.
+     */
     public static void EliminarPedido(SessionFactory sessionFactory, String producto) {
         Transaction transaction = null;
         Session session = null;

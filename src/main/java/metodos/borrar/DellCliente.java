@@ -6,10 +6,16 @@ import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
 
-import java.util.Scanner;
-
+/**
+ * Clase para eliminar un cliente de la base de datos.
+ */
 public class DellCliente {
 
+    /**
+     * Método para eliminar un cliente por su NIF.
+     * @param sessionFactory Factoría de sesiones Hibernate.
+     * @param nifCliente NIF del cliente a eliminar.
+     */
     public static void EliminarCliente(SessionFactory sessionFactory, String nifCliente) {
         Transaction transaction = null;
         Session session = null;
@@ -42,6 +48,4 @@ public class DellCliente {
             }
         }
     }
-
-
 }

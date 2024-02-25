@@ -9,10 +9,20 @@ import org.example.EntidadPago;
 import java.math.BigDecimal;
 import java.sql.Date;
 import java.util.List;
-import java.util.Scanner;
 
+/**
+ * Clase para actualizar la información de un pago en la base de datos.
+ */
 public class UpDatePago {
 
+    /**
+     * Método para modificar un pago.
+     * @param sessionFactory Factoría de sesiones Hibernate.
+     * @param idPago ID del pago a modificar.
+     * @param idPedido ID del pedido asociado al pago.
+     * @param monto Monto del pago.
+     * @param fecha Fecha del pago.
+     */
     public static void ModificarPago(SessionFactory sessionFactory, int idPago, int idPedido, BigDecimal monto, Date fecha) {
         Transaction transaction = null;
         Session session = null;
