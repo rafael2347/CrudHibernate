@@ -1,6 +1,6 @@
 package metodos.borrar;
 
-import org.example.EntidadCliente;
+import org.example.EntidadPago;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -8,26 +8,26 @@ import org.hibernate.cfg.Configuration;
 
 import java.util.Scanner;
 
-public class DellCliente {
+public class DellPago {
 
-    public static void EliminarCliente(SessionFactory sessionFactory, String nifCliente) {
+    public static void EliminarPago(SessionFactory sessionFactory, int idPago) {
         Transaction transaction = null;
         Session session = null;
         try {
             session = sessionFactory.openSession();
             transaction = session.beginTransaction();
 
-            // Obtener el cliente por su NIF
-            EntidadCliente cliente = session.get(EntidadCliente.class, nifCliente);
+            // Obtener el pago por su ID
+            EntidadPago pago = session.get(EntidadPago.class, idPago);
 
-            // Verificar si se encontró el cliente
-            if (cliente != null) {
+            // Verificar si se encontró el pago
+            if (pago != null) {
                 // Si se encontró, eliminarlo
-                session.delete(cliente);
-                System.out.println("Cliente eliminado correctamente.");
+                session.delete(pago);
+                System.out.println("Pago eliminado correctamente.");
             } else {
                 // Si no se encontró, mostrar un mensaje de error
-                System.out.println("No se encontró ningún cliente con el NIF proporcionado.");
+                System.out.println("No se encontró ningún pago con el ID proporcionado.");
             }
 
             // Confirmar la transacción
@@ -42,6 +42,4 @@ public class DellCliente {
             }
         }
     }
-
-
 }

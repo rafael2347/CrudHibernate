@@ -1,5 +1,7 @@
 package org.example;
 
+import metodos.borrar.DellPago;
+import metodos.borrar.DellPedido;
 import org.hibernate.SessionFactory;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
@@ -88,17 +90,25 @@ public class App {
                     String nifClienteAEliminar = scanner.nextLine(); // Leer el NIF ingresado por el usuario
 
                     // Llamar al método para eliminar el cliente
-                    DellCliente.eliminarCliente(sessionFactory, nifClienteAEliminar);
+                    DellCliente.EliminarCliente(sessionFactory, nifClienteAEliminar);
 
                     // Cerrar el scanner
                     scanner.close();
                 } else if ("pago".equals(dell)) {
-                    System.out.println("Ingrese el ID del pedido:");
-                    int idPedido = Integer.parseInt(sc.nextLine());
-                    // Agrega aquí la lógica para eliminar un pago
+                    System.out.println("Ingrese el ID del pago a eliminar:");
+                    int idPago = Integer.parseInt(sc.nextLine());
+
+                    // Llamar al método para eliminar el cliente
+                    DellPago.EliminarPago(sessionFactory, idPago);
                 } else if ("pedido".equals(dell)) {
-                    // Agrega aquí la lógica para eliminar un pedido
+                    System.out.println("Ingrese el producto a eliminar:");
+                    String producto = sc.nextLine();
+
+                    // Llamar al método para eliminar el pedido por producto
+                    DellPedido.EliminarPedido(sessionFactory, producto);
                 }
+
+
                 break;
             default:
                 System.out.println("No puedes introducir un número que no esté en el menú y tampoco puedes poner una palabra");
