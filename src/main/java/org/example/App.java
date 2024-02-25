@@ -3,6 +3,7 @@ package org.example;
 import metodos.borrar.DellPago;
 import metodos.borrar.DellPedido;
 import metodos.editar.UpDateCliente;
+import metodos.editar.UpDatePago;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.Session;
@@ -91,13 +92,24 @@ public class App {
                         // Llamar al método para modificar el cliente
                         UpDateCliente.ModificarCliente(sessionFactory, nifCliente);
                     } else if ("pago".equals(upda)) {
+                        System.out.println("Introduzca el ID del pago a modificar:");
+                        int idPago = Integer.parseInt(sc.nextLine());
                         // Lógica para editar pago
+                        System.out.println("Ingrese el ID del pedido:");
+                        int idPedido = Integer.parseInt(sc.nextLine());
+                        System.out.println("Ingrese el monto:");
+                        BigDecimal monto = new BigDecimal(sc.nextLine());
+                        java.util.Date utilDate = new java.util.Date();
+                        java.sql.Date fecha = new java.sql.Date(utilDate.getTime());
+                        // Llamar al método para modificar el pago
+                        UpDatePago.ModificarPago(sessionFactory, idPago, idPedido, monto, fecha);
                     } else if ("pedido".equals(upda)) {
                         // Lógica para editar pedido
                     } else {
                         System.out.println("Base de datos no válida.");
                     }
                     break;
+
                 case "4":
                     System.out.println("Ingrese la base de datos de la que desea eliminar un registro: cliente, pago, pedido");
                     String dell = sc.nextLine();
