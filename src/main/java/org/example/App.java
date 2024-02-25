@@ -4,6 +4,7 @@ import metodos.borrar.DellPago;
 import metodos.borrar.DellPedido;
 import metodos.editar.UpDateCliente;
 import metodos.editar.UpDatePago;
+import metodos.editar.UpDatePedido;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.Session;
@@ -96,19 +97,24 @@ public class App {
                         int idPago = Integer.parseInt(sc.nextLine());
                         // Lógica para editar pago
                         System.out.println("Ingrese el ID del pedido:");
-                        int idPedido = Integer.parseInt(sc.nextLine());
+                        int idPedidoPago = Integer.parseInt(sc.nextLine());
                         System.out.println("Ingrese el monto:");
-                        BigDecimal monto = new BigDecimal(sc.nextLine());
-                        java.util.Date utilDate = new java.util.Date();
-                        java.sql.Date fecha = new java.sql.Date(utilDate.getTime());
+                        BigDecimal montoPago = new BigDecimal(sc.nextLine());
+                        java.util.Date utilDatePago = new java.util.Date();
+                        java.sql.Date fechaPago = new java.sql.Date(utilDatePago.getTime());
                         // Llamar al método para modificar el pago
-                        UpDatePago.ModificarPago(sessionFactory, idPago, idPedido, monto, fecha);
+                        UpDatePago.ModificarPago(sessionFactory, idPago, idPedidoPago, montoPago, fechaPago);
                     } else if ("pedido".equals(upda)) {
-                        // Lógica para editar pedido
+                        System.out.println("Ingrese el producto del pedido a modificar:");
+                        String productoPedido = sc.nextLine();
+                        // Llamar al método para modificar el pedido
+                        UpDatePedido.ModificarPedido(sessionFactory, productoPedido);
                     } else {
                         System.out.println("Base de datos no válida.");
                     }
                     break;
+
+
 
                 case "4":
                     System.out.println("Ingrese la base de datos de la que desea eliminar un registro: cliente, pago, pedido");
