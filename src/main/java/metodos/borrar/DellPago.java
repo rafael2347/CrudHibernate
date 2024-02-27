@@ -1,10 +1,9 @@
 package metodos.borrar;
 
-import org.example.EntidadPago;
+import org.pojos.EntidadPago;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import org.hibernate.cfg.Configuration;
 
 /**
  * Clase para eliminar un pago de la base de datos.

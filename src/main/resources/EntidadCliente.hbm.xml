@@ -4,7 +4,7 @@
     "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
 
-    <class name="org.example.EntidadCliente" table="cliente" schema="mi_base_de_datos">
+    <class name="org.pojos.EntidadCliente" table="cliente" schema="mi_base_de_datos">
         <id name="nif">
             <column name="nif" sql-type="char(9)" length="20"/>
         </id>

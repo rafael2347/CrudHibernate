@@ -1,6 +1,6 @@
 package metodos.mostrar;
 
-import org.example.EntidadPedido;
+import org.pojos.EntidadPedido;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.query.Query;
@@ -28,7 +28,7 @@ public class ViewPedido {
             try (SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory()) {
                 try (Session session = sessionFactory.openSession()) {
                     // Consulta para obtener todos los pedidos
-                    Query<EntidadPedido> miQuery = session.createQuery("from org.example.EntidadPedido", EntidadPedido.class);
+                    Query<EntidadPedido> miQuery = session.createQuery("from org.pojos.EntidadPedido", EntidadPedido.class);
                     List<EntidadPedido> listaPedidos = miQuery.list();
                     // Iterar sobre la lista de pedidos y mostrar la información
                     for (EntidadPedido pedido : listaPedidos) {

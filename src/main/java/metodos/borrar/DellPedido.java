@@ -1,6 +1,6 @@
 package metodos.borrar;
 
-import org.example.EntidadPedido;
+import org.pojos.EntidadPedido;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;

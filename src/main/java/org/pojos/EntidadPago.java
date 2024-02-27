@@ -1,4 +1,4 @@
-package org.example;
+package org.pojos;
 
 import java.math.BigDecimal;
 import java.sql.Date;

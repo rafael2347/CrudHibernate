@@ -4,7 +4,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
-import org.example.EntidadPedido;
+import org.pojos.EntidadPedido;
 
 import java.util.List;
 import java.util.Scanner;

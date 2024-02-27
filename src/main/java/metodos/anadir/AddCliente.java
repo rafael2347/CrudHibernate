@@ -1,6 +1,6 @@
 package metodos.anadir;
 
-import org.example.EntidadCliente;
+import org.pojos.EntidadCliente;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -10,7 +10,6 @@ import org.hibernate.cfg.Configuration;
  * Clase para agregar un nuevo cliente a la base de datos.
  */
 public class AddCliente {
-
     /**
      * Método para insertar un nuevo cliente en la base de datos.
      * @param nombre Nombre del cliente.

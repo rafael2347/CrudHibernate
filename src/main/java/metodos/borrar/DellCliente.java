@@ -1,10 +1,9 @@
 package metodos.borrar;
 
-import org.example.EntidadCliente;
+import org.pojos.EntidadCliente;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
-import org.hibernate.cfg.Configuration;
 
 /**
  * Clase para eliminar un cliente de la base de datos.

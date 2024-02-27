@@ -1,4 +1,4 @@
-package org.example;
+package org.pojos;
 
 public class EntidadCliente {
     private String nif;

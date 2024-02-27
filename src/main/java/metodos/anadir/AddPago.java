@@ -1,6 +1,6 @@
 package metodos.anadir;
 
-import org.example.EntidadPago;
+import org.pojos.EntidadPago;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -13,7 +13,6 @@ import java.sql.Date;
  * Clase para agregar un nuevo pago a la base de datos.
  */
 public class AddPago {
-
     /**
      * Método para insertar un nuevo pago en la base de datos.
      * @param idPedido ID del pedido asociado al pago.

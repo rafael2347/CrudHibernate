@@ -1,13 +1,10 @@
 package metodos.anadir;
 
-import org.example.EntidadPedido; // Importa la clase que representa los pedidos
+import org.pojos.EntidadPedido; // Importa la clase que representa los pedidos
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.cfg.Configuration;
-
-import java.math.BigDecimal;
-import java.sql.Date;
 
 /**
  * Clase para agregar un nuevo pedido a la base de datos.

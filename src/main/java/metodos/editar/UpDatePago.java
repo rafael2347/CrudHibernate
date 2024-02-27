@@ -4,7 +4,7 @@ import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
-import org.example.EntidadPago;
+import org.pojos.EntidadPago;
 
 import java.math.BigDecimal;
 import java.sql.Date;

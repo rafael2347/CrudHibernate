@@ -1,6 +1,6 @@
 package metodos.mostrar;
 
-import org.example.EntidadCliente;
+import org.pojos.EntidadCliente;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
@@ -28,7 +28,7 @@ public class ViewCliente {
             try (SessionFactory sessionFactory = new Configuration().configure().buildSessionFactory()) {
                 try (Session session = sessionFactory.openSession()) {
                     // Consulta para obtener todos los clientes
-                    Query<EntidadCliente> miQuery = session.createQuery("from org.example.EntidadCliente", EntidadCliente.class);
+                    Query<EntidadCliente> miQuery = session.createQuery("from org.pojos.EntidadCliente", EntidadCliente.class);
                     List<EntidadCliente> listaClientes = miQuery.list();
                     // Iterar sobre la lista de clientes y mostrar la información
                     for (EntidadCliente cliente : listaClientes) {

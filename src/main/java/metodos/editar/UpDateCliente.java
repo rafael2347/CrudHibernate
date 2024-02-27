@@ -1,6 +1,6 @@
 package metodos.editar;
 
-import org.example.EntidadCliente;
+import org.pojos.EntidadCliente;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;

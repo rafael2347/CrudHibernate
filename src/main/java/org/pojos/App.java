@@ -1,4 +1,4 @@
-package org.example;
+package org.pojos;
 
 import metodos.borrar.DellPago;
 import metodos.borrar.DellPedido;
@@ -7,7 +7,6 @@ import metodos.editar.UpDatePago;
 import metodos.editar.UpDatePedido;
 import org.hibernate.SessionFactory;
 import org.hibernate.cfg.Configuration;
-import org.hibernate.Session;
 import metodos.anadir.AddCliente;
 import metodos.anadir.AddPago;
 import metodos.anadir.AddPedido;
