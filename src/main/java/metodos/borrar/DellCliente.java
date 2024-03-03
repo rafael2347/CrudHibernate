@@ -13,9 +13,9 @@ public class DellCliente {
     /**
      * Método para eliminar un cliente por su NIF.
      * @param sessionFactory Factoría de sesiones Hibernate.
-     * @param nifCliente NIF del cliente a eliminar.
+     * @param nifClienteAEliminar NIF del cliente a eliminar.
      */
-    public static void EliminarCliente(SessionFactory sessionFactory, String nifCliente) {
+    public static void EliminarCliente(SessionFactory sessionFactory, String nifClienteAEliminar) {
         Transaction transaction = null;
         Session session = null;
         try {
@@ -23,7 +23,7 @@ public class DellCliente {
             transaction = session.beginTransaction();
 
             // Obtener el cliente por su NIF
-            EntidadCliente cliente = session.get(EntidadCliente.class, nifCliente);
+            EntidadCliente cliente = session.get(EntidadCliente.class, nifClienteAEliminar);
 
             // Verificar si se encontró el cliente
             if (cliente != null) {

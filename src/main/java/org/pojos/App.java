@@ -129,8 +129,8 @@ public class App {
                         // Llamar al método para eliminar el cliente
                         DellCliente.EliminarCliente(sessionFactory, nifClienteAEliminar);
 
-                        // Cerrar el scanner
-                        scanner.close();
+
+
                     } else if ("pago".equals(dell)) {
                         System.out.println("Ingrese el ID del pago a eliminar:");
                         int idPago = Integer.parseInt(sc.nextLine());
