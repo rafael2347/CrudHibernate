@@ -93,6 +93,6 @@ Este proyecto no tiene una licencia explícita. Para utilizar o modificar el có
 
 ### Contacto ✉️
 
-Si tienes preguntas o sugerencias, no dudes en contactarme en [Rafa González Martin]([https://rfgm2023.sitew.es/]).
+Si tienes preguntas o sugerencias, no dudes en contactarme en [Rafa González Martin](https://rfgm2023.sitew.es/)
 
 ---
